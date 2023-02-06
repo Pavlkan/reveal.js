@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>KISS</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,8 +16,187 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+					<section>
+						<h1>KISS principle</h1>
+						<p>by <a href="https://github.com/Pavlkan">Pavel Karman</a></p>
+					</section>
+				<section>
+					<section>
+						<h3>What is <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a>?</h3>
+					</section>
+					<section>
+						<h3>Keep it simple, silly</h3>
+						<p>KISS is a design principle which comes to us from the U.S. Navy in 1960</p>
+					</section>
+					<section>
+						<h3>Main idea of KISS</h3>
+						<p>Most systems work best if they are kept simple rather than made complicated; therefore, simplicity should be a key goal in design, and unnecessary complexity should be avoided.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>How can we achieve simple and clean code?</h3>
+					</section>
+					<section>
+						<h3>1. Simple, but not primitive</h3> 
+						<p>We should use adequate tool for our current task </p>
+					</section>
+					<section>
+						<h3>2. Not excessively shortened</h3>
+						<p>Code size should be as long as it needs for understanding.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Couple of words about variables and functions naming</h3>
+					</section>
+					<section>
+						<ul>
+							<li style="color: red;">
+								One-symbol names:
+								<pre><code data-trim data-noescape>
+									const a;
+									var y;
+								</code></pre>
+							</li>
+							<li style="color: green;">
+								One-symbol names in certain places like cycles:
+								<pre><code data-trim data-noescape>
+									for (let i = 0; i <= someVarName.length; i++) {
+										//some code...
+									}
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li style="color: red;">
+								Unique abbreviations:
+								<pre><code data-trim data-noescape>
+									let ua; //userAgent
+									let brsr; //browser
+								</code></pre>
+							</li>
+							<li style="color: green;">
+								Widely used abbreviations:
+								<pre><code data-trim data-noescape>
+									let btn; //button
+									let arr; //array
+									let obj; //object
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li style="color: red;">
+								Abstract name that doesn’t refer to anything specific:
+								<pre><code data-trim data-noescape>
+									let value;
+									let data;
+								</code></pre>
+							</li>
+							<li style="color: green;">
+								Specific name:
+								<pre><code data-trim data-noescape>
+									let classNameData;
+									let arrayNameItem;
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li style="color: red;">
+								Identical names provide confuse:
+								<pre><code data-trim data-noescape>
+									let sameName = {...}
+									//...
+									if (someCondition) {
+										let sameName = 42341;
+									}
+								</code></pre>
+							</li>
+							<li style="color: green;">
+								Add unique semantic parts instead:
+								<pre><code data-trim data-noescape>
+									let oneName = {...}
+									//...
+									if (someCondition) {
+										let otherName = 42341;
+									}
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li style="color: red;">
+								Synonymic parts in variables and functions:   
+								<pre><code data-trim data-noescape>
+									renderSomeCode();
+									PaintSomeOtherCode();
+									DisplaySomeMoreCode(); 
+								</code></pre>
+							</li>
+							<li style="color: green;">
+								Chose one main naming style and unificate all names according to their purpose:
+								<pre><code data-trim data-noescape>
+									renderCodeA();
+									renderCodeB(); 
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li style="color: red;">
+								Not verb name for function:
+								<pre><code data-trim data-noescape>
+									function validation() {};
+									function F() {}
+								</code></pre> 
+							</li>
+							<li style="color: green;">
+								Verb names: 
+								<pre><code data-trim data-noescape>
+									isValidate(); //is- / are- for predicates 
+									showMessage();
+									calculateSomeAlgorithm();
+								</code></pre>
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>DRY principle</h3>
+					</section>
+					<section>
+						<h3>Do not repeat yourself</h3>
+						<p> In simple code we do not have repeats, they complicate code, make it unnecessarily big and hard to fix and refactor.</p>
+					</section>
+					<section>
+						<p>More we have repeats - bigger amounts of code to refactor, bigger number of potential mistakes and bugs</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>YAGNI principle</h3>
+					</section>
+					<section>
+						<h3>You ain't gonna need it</h3>
+						<p>In continuation of the topic of simplifying and reducing code we come to escaping of unused functionality</p>
+					</section>
+					<section>
+						<h3>Is unused functionality bad?</h3>
+						<p>Well, it is not moving you to the task accomplishment. Instead, just like with code duplication, the size of your code increases, as increases the amount of potential mistakes and work.</p>
+					</section>
+				</section>
+				<section>
+					<h3>Thank you for watching</h3>
+				</section>
 			</div>
 		</div>
 
